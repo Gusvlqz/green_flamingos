@@ -17,19 +17,24 @@
 
 <body>
 
-    <!-- Landing Section -->
-    <section id="landing">
-        <video autoplay muted loop playsinline class="bg-video">
-            <source src="assets/landing-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="landing-overlay">
-            <h1>Green Flamingos</h1>
-            <h2>VFX Compositor</h2>
-            <p>"Bringing the impossible to life"</p>
-            <div class="scroll-indicator">▼</div>
-        </div>
-    </section>
+<!-- Landing Section -->
+<section id="landing">
+    <div class="video-container">
+        <iframe 
+            src="https://player.vimeo.com/video/YOUR_VIDEO_ID?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" 
+            frameborder="0" 
+            webkitallowfullscreen 
+            mozallowfullscreen 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class="landing-overlay">
+        <h1>Green Flamingos</h1>
+        <h2>VFX Compositor</h2>
+        <p>"Bringing the impossible to life"</p>
+        <div class="scroll-indicator">▼</div>
+    </div>
+</section>
 
     <!-- Showcase Section -->
     <section id="showcase">
@@ -75,6 +80,7 @@
 <script src="script.js?v=2"></script>
 </body>
 </html>
+
 
 
 
