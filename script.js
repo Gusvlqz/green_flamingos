@@ -1,4 +1,4 @@
-// Dynamically load placeholder posters
+// Movie posters with IMDb links
 const posters = [
     { 
         img: "https://via.placeholder.com/300x450.png?text=Movie+1", 
@@ -18,19 +18,24 @@ const posters = [
     }
 ];
 
+// Target the poster grid
 const posterGrid = document.getElementById("posterGrid");
-posters.forEach(url => {
+
+// Loop through posters and add them to the grid
+posters.forEach(poster => {
     const link = document.createElement("a");
-    link.href = "https://www.imdb.com/";
+    link.href = poster.link;
     link.target = "_blank";
+
     const img = document.createElement("img");
-    img.src = url;
+    img.src = poster.img;
     img.alt = "Movie Poster";
+
     link.appendChild(img);
     posterGrid.appendChild(link);
 });
 
-// Contact form submission
+// Contact form logic
 const contactForm = document.getElementById("contactForm");
 const submitBtn = contactForm.querySelector("button");
 
@@ -39,7 +44,7 @@ contactForm.addEventListener("submit", function(e) {
 
     submitBtn.disabled = true;
 
-    const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL"; // Replace with your actual script URL
+    const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL"; // Replace with your actual Google Apps Script URL
 
     fetch(scriptURL, {
         method: "POST",
@@ -61,5 +66,4 @@ contactForm.addEventListener("submit", function(e) {
         submitBtn.disabled = false;
     });
 });
-
 
