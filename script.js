@@ -1,11 +1,21 @@
 // Dynamically load placeholder posters
 const posters = [
-    img: "poster1.jpg","https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i?text=Movie+1",
-    "https://via.placeholder.com/300x450.png?text=Movie+2",
-    "https://via.placeholder.com/300x450.png?text=Movie+3",
-    "https://via.placeholder.com/300x450.png?text=Movie+4",
-    "https://via.placeholder.com/300x450.png?text=Movie+5",
-    "https://via.placeholder.com/300x450.png?text=Movie+6"
+    { 
+        img: "https://via.placeholder.com/300x450.png?text=Movie+1", 
+        link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
+    },
+    { 
+        img: "https://via.placeholder.com/300x450.png?text=Movie+2", 
+        link: "https://www.imdb.com/title/tt7654321/"
+    },
+    { 
+        img: "https://via.placeholder.com/300x450.png?text=Movie+3", 
+        link: "https://www.imdb.com/title/tt2345678/"
+    },
+    { 
+        img: "https://via.placeholder.com/300x450.png?text=Movie+4", 
+        link: "https://www.imdb.com/title/tt8765432/"
+    }
 ];
 
 const posterGrid = document.getElementById("posterGrid");
@@ -51,4 +61,5 @@ contactForm.addEventListener("submit", function(e) {
         submitBtn.disabled = false;
     });
 });
+
 
