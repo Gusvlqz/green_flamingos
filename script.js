@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Movie posters with IMDb links
     const posters = [
-        { img.src = "assets/poster1.jpg"; link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+        { img: "assets/poster1.jpg"; link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
         { img: "https://via.placeholder.com/300x450.png?text=Movie+2", link: "https://www.imdb.com/title/tt7654321/" },
         { img: "https://via.placeholder.com/300x450.png?text=Movie+3", link: "https://www.imdb.com/title/tt2345678/" },
         { img: "https://via.placeholder.com/300x450.png?text=Movie+4", link: "https://www.imdb.com/title/tt8765432/" }
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 
 
 
