@@ -29,7 +29,7 @@ contactForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
     // Replace with your own Web App URL from Google Apps Script
-    const scriptURL = "https://script.google.com/macros/s/AKfycbytte9kleGK1y5ePQkXWyTYDjJN4J4nqN7S1raqs5F0TL6vxWo4ucasxE49lQJXN07msA/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycby7RAblUN7NMTwQVWLA8StvvHYEvVlqw2gSkO5h9Ip8fuipmHALp0anBIijUzOlJR9www/exec";
 
     fetch(scriptURL, {
         method: "POST",
@@ -48,3 +48,4 @@ contactForm.addEventListener("submit", function(e) {
         alert("There was an error sending your message.");
     });
 });
+
