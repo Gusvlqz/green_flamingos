@@ -1,28 +1,24 @@
-   document.addEventListener("DOMContentLoaded", function () {
+// Check if JS is loading
+console.log("script.js loaded");
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM ready");
+
     // Movie posters with IMDb links
     const posters = [
-        { 
-            img: "https://via.placeholder.com/300x450.png?text=Movie+1", 
-            link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
-        },
-        { 
-            img: "https://via.placeholder.com/300x450.png?text=Movie+2", 
-            link: "https://www.imdb.com/title/tt7654321/"
-        },
-        { 
-            img: "https://via.placeholder.com/300x450.png?text=Movie+3", 
-            link: "https://www.imdb.com/title/tt2345678/"
-        },
-        { 
-            img: "https://via.placeholder.com/300x450.png?text=Movie+4", 
-            link: "https://www.imdb.com/title/tt8765432/"
-        }
+        { img: "https://via.placeholder.com/300x450.png?text=Movie+1", link: "https://www.imdb.com/title/tt1234567/" },
+        { img: "https://via.placeholder.com/300x450.png?text=Movie+2", link: "https://www.imdb.com/title/tt7654321/" },
+        { img: "https://via.placeholder.com/300x450.png?text=Movie+3", link: "https://www.imdb.com/title/tt2345678/" },
+        { img: "https://via.placeholder.com/300x450.png?text=Movie+4", link: "https://www.imdb.com/title/tt8765432/" }
     ];
 
-    // Target the poster grid
     const posterGrid = document.getElementById("posterGrid");
 
-    // Loop through posters and add them to the grid
+    if (!posterGrid) {
+        console.error("Poster grid not found!");
+        return;
+    }
+
     posters.forEach(poster => {
         const link = document.createElement("a");
         link.href = poster.link;
@@ -45,7 +41,7 @@
 
         submitBtn.disabled = true;
 
-        const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL"; // Replace with your actual Google Apps Script URL
+        const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL";
 
         fetch(scriptURL, {
             method: "POST",
