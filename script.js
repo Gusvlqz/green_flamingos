@@ -1,16 +1,12 @@
 const contactForm = document.getElementById("contactForm");
-const formSuccess = document.getElementById("formSuccess");
 const submitBtn = contactForm.querySelector("button[type='submit']");
 
 contactForm.addEventListener("submit", function(e) {
-    e.preventDefault(); // Stop page reload
+    e.preventDefault(); // Prevent page reload
 
-    // Disable button & show spinner
     submitBtn.disabled = true;
-    const originalBtnText = submitBtn.textContent;
-    submitBtn.innerHTML = `<span class="spinner"></span> Sending...`;
 
-    const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL"; // Replace with actual URL
+    const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL"; // Replace with actual script URL
 
     fetch(scriptURL, {
         method: "POST",
@@ -18,15 +14,8 @@ contactForm.addEventListener("submit", function(e) {
     })
     .then(response => {
         if (response.ok) {
-            contactForm.classList.add("hidden");
-            formSuccess.classList.remove("hidden");
+            alert("Message sent successfully!");
             contactForm.reset();
-
-            // Auto-return to form
-            setTimeout(() => {
-                formSuccess.classList.add("hidden");
-                contactForm.classList.remove("hidden");
-            }, 5000);
         } else {
             alert("Error sending message. Please try again.");
         }
@@ -37,6 +26,5 @@ contactForm.addEventListener("submit", function(e) {
     })
     .finally(() => {
         submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
     });
 });
