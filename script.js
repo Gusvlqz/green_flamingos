@@ -44,21 +44,22 @@ const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // Get form values
-    const formData = new FormData(contactForm);
+    const scriptURL = "https://script.google.com/macros/s/AKfycby7RAblUN7NMTwQVWLA8StvvHYEvVlqw2gSkO5h9Ip8fuipmHALp0anBIijUzOlJR9www/exec"; // Replace with real one
 
-    // ===== PLACEHOLDER =====
-    // Replace with your Google Apps Script Web App URL after setup
-    const scriptURL = "https://script.google.com/macros/s/AKfycby7RAblUN7NMTwQVWLA8StvvHYEvVlqw2gSkO5h9Ip8fuipmHALp0anBIijUzOlJR9www/exec";
-
-    fetch(scriptURL, { method: "POST", body: formData })
-        .then(response => {
+    fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(contactForm)
+    })
+    .then(response => {
+        if (response.ok) {
             alert("Message sent successfully!");
             contactForm.reset();
-        })
-        .catch(error => {
-            console.error("Error!", error.message);
-            alert("There was an error sending your message.");
-        });
+        } else {
+            alert("Error sending message. Please try again.");
+        }
+    })
+    .catch(error => {
+        console.error("Error!", error.message);
+        alert("There was an error sending your message.");
+    });
 });
-
