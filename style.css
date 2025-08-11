@@ -1,14 +1,86 @@
 body {
-    background: #0a0f0a;
-    font-family: 'Arial', sans-serif;
-    color: #fff;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0f0a;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Landing video */
+#landing {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#landing video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#landing .overlay {
+    position: relative;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #00ff88;
+    background: rgba(0,0,0,0.3);
     padding: 20px;
 }
 
-h2 {
-    color: #00ff88;
+/* Posters grid */
+#showcase {
+    padding: 50px 20px;
     text-align: center;
+}
+
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.poster-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.poster-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* About section */
+#about {
+    padding: 50px 20px;
+    background: #111;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    flex: 1 1 400px;
+}
+
+.about-content p {
+    flex: 1 1 300px;
+}
+
+/* Contact section */
+#contact {
+    padding: 50px 20px;
 }
 
 form {
@@ -23,10 +95,8 @@ input, textarea {
     padding: 10px;
     border-radius: 6px;
     border: none;
-    outline: none;
     background: #1a1f1a;
-    color: #fff;
-    font-size: 1rem;
+    color: white;
 }
 
 button {
@@ -35,10 +105,8 @@ button {
     border-radius: 6px;
     background: #00ff88;
     color: #0a0f0a;
-    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:disabled {
@@ -46,14 +114,13 @@ button:disabled {
     cursor: not-allowed;
 }
 
-button:hover:not(:disabled) {
-    background: #00cc6a;
+.contact-info {
+    text-align: center;
+    margin-top: 20px;
 }
 
-/* Success message styling */
-.hidden {
-    display: none;
-}
+/* Success message */
+.hidden { display: none; }
 
 #formSuccess {
     background: rgba(0, 255, 136, 0.1);
@@ -66,12 +133,7 @@ button:hover:not(:disabled) {
     animation: fadeIn 0.6s ease-in-out forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Spinner animation */
+/* Spinner */
 .spinner {
     display: inline-block;
     width: 16px;
@@ -82,6 +144,11 @@ button:hover:not(:disabled) {
     border-radius: 50%;
     animation: spin 0.6s linear infinite;
     vertical-align: middle;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes spin {
