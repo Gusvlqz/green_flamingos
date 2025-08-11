@@ -49,7 +49,7 @@ contactForm.addEventListener("submit", function(e) {
 
     // ===== PLACEHOLDER =====
     // Replace with your Google Apps Script Web App URL after setup
-    const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL";
+    const scriptURL = "https://script.google.com/macros/s/AKfycby7RAblUN7NMTwQVWLA8StvvHYEvVlqw2gSkO5h9Ip8fuipmHALp0anBIijUzOlJR9www/exec";
 
     fetch(scriptURL, { method: "POST", body: formData })
         .then(response => {
@@ -61,3 +61,4 @@ contactForm.addEventListener("submit", function(e) {
             alert("There was an error sending your message.");
         });
 });
+
