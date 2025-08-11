@@ -1,6 +1,6 @@
 // Dynamically load placeholder posters
 const posters = [
-    "https://via.placeholder.com/300x450.png?text=Movie+1",
+    img: "poster1.jpg","https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i?text=Movie+1",
     "https://via.placeholder.com/300x450.png?text=Movie+2",
     "https://via.placeholder.com/300x450.png?text=Movie+3",
     "https://via.placeholder.com/300x450.png?text=Movie+4",
@@ -51,3 +51,4 @@ contactForm.addEventListener("submit", function(e) {
         submitBtn.disabled = false;
     });
 });
+
