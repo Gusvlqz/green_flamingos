@@ -1,74 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Flamingos – VFX Compositor</title>
+    <meta name="description" content="Green Flamingos – VFX Compositor bringing the impossible to life. Showcasing cinematic work, behind the scenes visuals, and contact information.">
+    <meta name="keywords" content="VFX Compositor, Green Flamingos, film post-production, visual effects, movie compositing">
+    <meta property="og:title" content="Green Flamingos – VFX Compositor" />
+    <meta property="og:description" content="Bringing the impossible to life through cinematic visual effects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-image.jpg" />
+    <meta property="og:url" content="https://yourdomain.com" />
     <meta name="description" content="Green Flamingos - Bringing the impossible to life. VFX Compositor portfolio.">
     <title>Green Flamingos | VFX Compositor</title>
-    <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Landing Video -->
+    <!-- Landing Section -->
     <section id="landing">
-        <video autoplay muted loop playsinline>
-            <source src="https://cdn.pixabay.com/video/2017/09/27/15568-233231102_large.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="assets/landing-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
-        <div class="overlay">
+        <div class="landing-overlay">
             <h1>Green Flamingos</h1>
-            <p>Bringing the impossible to life</p>
+            <h2>VFX Compositor</h2>
+            <p>"Bringing the impossible to life"</p>
+            <div class="scroll-indicator">▼</div>
         </div>
     </section>
 
-    <!-- Movie Poster Showcase -->
+    <!-- Showcase Section -->
     <section id="showcase">
-        <h2>My Work</h2>
-        <div class="poster-grid">
-            <a href="https://www.imdb.com/" target="_blank"><img src="https://via.placeholder.com/300x450.png?text=Movie+1" alt="Movie 1"></a>
-            <a href="https://www.imdb.com/" target="_blank"><img src="https://via.placeholder.com/300x450.png?text=Movie+2" alt="Movie 2"></a>
-            <a href="https://www.imdb.com/" target="_blank"><img src="https://via.placeholder.com/300x450.png?text=Movie+3" alt="Movie 3"></a>
-            <a href="https://www.imdb.com/" target="_blank"><img src="https://via.placeholder.com/300x450.png?text=Movie+4" alt="Movie 4"></a>
-            <a href="https://www.imdb.com/" target="_blank"><img src="https://via.placeholder.com/300x450.png?text=Movie+5" alt="Movie 5"></a>
-            <a href="https://www.imdb.com/" target="_blank"><img src="https://via.placeholder.com/300x450.png?text=Movie+6" alt="Movie 6"></a>
+        <h2>Work Showcase</h2>
+        <div class="poster-grid" id="posterGrid">
+            <!-- Posters will be loaded dynamically via JS -->
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <h2>About Me</h2>
         <div class="about-content">
-            <img src="https://via.placeholder.com/600x400.png?text=Behind+the+Scenes" alt="Behind the Scenes VFX">
+            <h2>About Me</h2>
             <p>
-                I’m a VFX compositor with a passion for making the unreal feel real. From
-                high-octane action scenes to subtle environment enhancements, my work brings
-                stories to life through seamless integration of visual effects.
+                I am Green Flamingos, a VFX compositor dedicated to weaving visual magic into cinematic storytelling. 
+                From subtle enhancements to mind-bending transformations, my work blends technical precision 
+                with creative artistry, ensuring every frame resonates with the audience.
             </p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+<section id="contact">
+        <h2>Contact</h2>
         <h2>Contact Me</h2>
-        <form id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <input type="text" name="subject" placeholder="Subject" required />
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-
+<form id="contactForm">
+<input type="text" name="name" placeholder="Your Name" required />
+<input type="email" name="email" placeholder="Your Email" required />
+<input type="text" name="subject" placeholder="Subject" required />
+<textarea name="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
         <div class="contact-info">
-            <p>Email: youremail@example.com</p>
+            <p>Email: example@email.com</p>
             <p>Phone: +1 234 567 890</p>
-            <p>
-                <a href="#">Instagram</a> | 
-                <a href="#">LinkedIn</a> | 
-                <a href="#">Twitter</a>
-            </p>
-        </div>
-    </section>
+            <p>Social: @greenflamingos</p>
 
-    <script src="script.js"></script>
+        <div id="formSuccess" class="hidden">
+            <h3>✅ Message Sent!</h3>
+            <p>Thanks for reaching out. I’ll get back to you as soon as possible.</p>
+</div>
+</section>
+
+    <footer>
+        <p>© 2025 Green Flamingos. All rights reserved.</p>
+    </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
