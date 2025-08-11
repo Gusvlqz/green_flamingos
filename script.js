@@ -1,50 +1,35 @@
-/* ===== Poster Showcase Loader ===== */
-
-// Array of poster data (public domain placeholders)
+// Dynamically load placeholder posters
 const posters = [
-    {
-        title: "Movie One",
-        img: "assets/poster1.jpg",
-        link: "https://www.imdb.com/"
-    },
-    {
-        title: "Movie Two",
-        img: "assets/poster2.jpg",
-        link: "https://www.imdb.com/"
-    },
-    {
-        title: "Movie Three",
-        img: "assets/poster3.jpg",
-        link: "https://www.imdb.com/"
-    },
-    {
-        title: "Movie Four",
-        img: "assets/poster4.jpg",
-        link: "https://www.imdb.com/"
-    }
+    "https://via.placeholder.com/300x450.png?text=Movie+1",
+    "https://via.placeholder.com/300x450.png?text=Movie+2",
+    "https://via.placeholder.com/300x450.png?text=Movie+3",
+    "https://via.placeholder.com/300x450.png?text=Movie+4",
+    "https://via.placeholder.com/300x450.png?text=Movie+5",
+    "https://via.placeholder.com/300x450.png?text=Movie+6"
 ];
 
-// Load posters dynamically
 const posterGrid = document.getElementById("posterGrid");
-
-posters.forEach(poster => {
-    const imgElement = document.createElement("img");
-    imgElement.src = poster.img;
-    imgElement.alt = poster.title;
-    imgElement.addEventListener("click", () => {
-        window.open(poster.link, "_blank");
-    });
-    posterGrid.appendChild(imgElement);
+posters.forEach(url => {
+    const link = document.createElement("a");
+    link.href = "https://www.imdb.com/";
+    link.target = "_blank";
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = "Movie Poster";
+    link.appendChild(img);
+    posterGrid.appendChild(link);
 });
 
-/* ===== Contact Form Submission (Google Sheets Placeholder) ===== */
-
+// Contact form submission
 const contactForm = document.getElementById("contactForm");
+const submitBtn = contactForm.querySelector("button");
 
 contactForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycby7RAblUN7NMTwQVWLA8StvvHYEvVlqw2gSkO5h9Ip8fuipmHALp0anBIijUzOlJR9www/exec"; // Replace with real one
+    submitBtn.disabled = true;
+
+    const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL"; // Replace with your actual script URL
 
     fetch(scriptURL, {
         method: "POST",
@@ -59,7 +44,10 @@ contactForm.addEventListener("submit", function(e) {
         }
     })
     .catch(error => {
-        console.error("Error!", error.message);
+        console.error("Error!", error);
         alert("There was an error sending your message.");
+    })
+    .finally(() => {
+        submitBtn.disabled = false;
     });
 });
