@@ -51,12 +51,28 @@ body {
   overflow: hidden;
 }
 
-.video-container {
+.video-container iframe {
   position: absolute;
-  inset: 0;           /* top:0; right:0; bottom:0; left:0; */
-  z-index: -1;
-  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  border: 0;
+  pointer-events: none;
 }
+
+@media (max-aspect-ratio: 9/16) {
+  .video-container iframe {
+    min-width: auto;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+
 
 /* Cover trick: maintain aspect ratio, always cover the container */
 .video-container iframe {
@@ -183,6 +199,7 @@ footer {
     background-color: #050807;
     color: #888;
 }
+
 
 
 
