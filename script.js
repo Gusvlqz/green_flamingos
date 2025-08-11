@@ -3,14 +3,14 @@ const formSuccess = document.getElementById("formSuccess");
 const submitBtn = contactForm.querySelector("button[type='submit']");
 
 contactForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+    e.preventDefault(); // Stop page reload
 
-    // Disable button & add spinner
+    // Disable button & show spinner
     submitBtn.disabled = true;
     const originalBtnText = submitBtn.textContent;
     submitBtn.innerHTML = `<span class="spinner"></span> Sending...`;
 
-    const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL"; // Replace with your Web App URL
+    const scriptURL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL"; // Replace with actual URL
 
     fetch(scriptURL, {
         method: "POST",
@@ -18,12 +18,11 @@ contactForm.addEventListener("submit", function(e) {
     })
     .then(response => {
         if (response.ok) {
-            // Hide form, show success message
             contactForm.classList.add("hidden");
             formSuccess.classList.remove("hidden");
             contactForm.reset();
 
-            // After 5 seconds, fade back to form
+            // Auto-return to form
             setTimeout(() => {
                 formSuccess.classList.add("hidden");
                 contactForm.classList.remove("hidden");
@@ -37,7 +36,6 @@ contactForm.addEventListener("submit", function(e) {
         alert("There was an error sending your message.");
     })
     .finally(() => {
-        // Restore button state for errors only
         submitBtn.disabled = false;
         submitBtn.textContent = originalBtnText;
     });
