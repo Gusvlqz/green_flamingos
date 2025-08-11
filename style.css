@@ -103,3 +103,22 @@ button {
     padding: 10px;
     border: none;
     border-ra
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.poster-grid a img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+}
+
+.poster-grid a img:hover {
+    transform: scale(1.05);
+}
+
