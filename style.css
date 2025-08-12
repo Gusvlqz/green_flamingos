@@ -6,108 +6,53 @@ body {
     color: #fff;
 }
 
-/* Landing Section */
-#landing {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.bg-video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.landing-overlay {
-    position: relative;
-    z-index: 1;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: #00ff88;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.scroll-indicator {
-    margin-top: 20px;
-    font-size: 1.5rem;
-    animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-/* ----- Landing full-screen + Vimeo background iframe (cover) ----- */
-
-#landing {
+/* Landing Section and Video Container */
+#landing, .video-container {
   position: relative;
   width: 100%;
-  height: 100vh;   /* full viewport height */
+  height: 100vh;
   overflow: hidden;
 }
 
+/* Vimeo iframe fills vertically, width adjusts to maintain 16:9 */
 .video-container iframe {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 177.78vh; /* 16:9 ratio based on viewport height */
+  height: 100vh;
+  pointer-events: none;
   border: 0;
+}
+
+/* Overlay styling */
+.landing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  color: #a3f28a; /* bright circular green */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   pointer-events: none;
 }
 
-@media (max-aspect-ratio: 9/16) {
-  .video-container iframe {
-    min-width: auto;
-    min-height: 100%;
-    width: 100%;
-    height: auto;
-  }
+/* Scroll indicator styling (optional) */
+.scroll-indicator {
+  font-size: 2rem;
+  margin-top: 1rem;
+  animation: bounce 2s infinite;
 }
 
-
-/* Cover trick: maintain aspect ratio, always cover the container */
-.video-container iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  /* Let iframe scale while preserving aspect ratio */
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-
-  border: 0;
-  pointer-events: none; /* let clicks pass through to page (overlay controls) */
-}
-
-/* Make sure overlay sits above video */
-.landing-overlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #00ff88;
-}
-
-/* small optional tweak for very wide screens: ensure no gap
-   (only if you still see thin bars on ultra-wide displays) */
-@media (min-aspect-ratio: 16/9) {
-  .video-container iframe {
-    min-width: 100vw;
-    min-height: calc(100vw * 9 / 16);
-  }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
 }
 
 
@@ -199,6 +144,7 @@ footer {
     background-color: #050807;
     color: #888;
 }
+
 
 
 
