@@ -12,6 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             img: "assets/Dark_Winds.jpg",
             link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
+        },
+        
+            img: "assets/Little_Voice.jpg",
+            link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
+        },
+            img: "assets/Morko_Mali.jpg",
+            link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
+        },
+            img: "assets/P_Valley.jpg",
+            link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
         }
     ];
 
@@ -34,5 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         posterGrid.appendChild(a);
     });
 });
+
 
 
