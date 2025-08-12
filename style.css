@@ -131,44 +131,7 @@ body {
     text-align: center;
 }
 
-/* --- Showcase Section Styles --- */
-#showcase {
-  padding: 2rem 1rem;
-  background-color: #0b1a0d; /* dark greenish background */
-  color: #a3f28a; /* bright green text */
-  text-align: center;
-}
 
-.poster-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-  padding: 1rem 0;
-}
-
-.poster-grid a {
-  display: block;
-  max-width: 200px;
-  max-height: 300px;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(163, 242, 138, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.poster-grid a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(163, 242, 138, 0.8);
-}
-
-.poster-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 8px;
-}
 
 
 /* ===== Contact Section ===== */
@@ -223,6 +186,7 @@ footer {
     background-color: #050807;
     color: #888;
 }
+
 
 
 
