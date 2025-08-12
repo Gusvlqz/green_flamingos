@@ -26,7 +26,10 @@
       allow="autoplay; fullscreen"
       allowfullscreen
       referrerpolicy="strict-origin-when-cross-origin"
-      title="Green Flamingos"></iframe>
+      title="Green Flamingos"
+      width="100%"
+      height="100%"
+    ></iframe>
   </div>
 
   <div class="landing-overlay">
@@ -37,61 +40,61 @@
   </div>
 </section>
 
-  <!-- Full Video Showcase Section -->
+<!-- Full Video Showcase Section -->
 <section id="full-video-showcase">
   <div class="video-container">
     <iframe 
-      src="https://player.vimeo.com/video/1084467229" 
+      src="https://player.vimeo.com/video/1084467229?background=1&autoplay=1&muted=1&loop=1&byline=0&title=0&controls=0" 
       frameborder="0" 
-      allow="autoplay; fullscreen; picture-in-picture; encrypted-media" 
-      title="Reel_2025"
+      allow="autoplay; fullscreen; picture-in-picture" 
       allowfullscreen
+      title="Reel 2025"
+      width="100%"
+      height="100%"
     ></iframe>
   </div>
 </section>
 
+<!-- Showcase Section -->
+<section id="showcase">
+    <h2>Work Showcase</h2>
+    <div class="poster-grid" id="posterGrid">
+        <!-- Posters will be loaded dynamically via JS -->
+    </div>
+</section>
 
+<!-- About Section -->
+<section id="about">
+    <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+            I am Green Flamingos, a VFX compositor dedicated to weaving visual magic into cinematic storytelling. 
+            From subtle enhancements to mind-bending transformations, my work blends technical precision 
+            with creative artistry, ensuring every frame resonates with the audience.
+        </p>
+    </div>
+</section>
 
-    <!-- Showcase Section -->
-    <section id="showcase">
-        <h2>Work Showcase</h2>
-        <div class="poster-grid" id="posterGrid">
-            <!-- Posters will be loaded dynamically via JS -->
-        </div>
-    </section>
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact</h2>
+    <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+        <p>Email: example@email.com</p>
+        <p>Phone: +1 234 567 890</p>
+        <p>Social: @greenflamingos</p>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>
-                I am Green Flamingos, a VFX compositor dedicated to weaving visual magic into cinematic storytelling. 
-                From subtle enhancements to mind-bending transformations, my work blends technical precision 
-                with creative artistry, ensuring every frame resonates with the audience.
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <form id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <input type="text" name="subject" placeholder="Subject" required />
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <div class="contact-info">
-            <p>Email: example@email.com</p>
-            <p>Phone: +1 234 567 890</p>
-            <p>Social: @greenflamingos</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 Green Flamingos. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>© 2025 Green Flamingos. All rights reserved.</p>
+</footer>
 
 <script src="script.js?v=2"></script>
 </body>
