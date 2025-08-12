@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Posters array
     const posters = [
         {
-            img: "assets/poster1.jpg",
+            img: "assets/Dark_Winds.jpg",
             link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
         }
     ];
@@ -34,3 +34,4 @@ document.addEventListener("DOMContentLoaded", function () {
         posterGrid.appendChild(a);
     });
 });
+
