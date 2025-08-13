@@ -181,8 +181,8 @@ footer {
 /* Burger Menu */
 .burger-menu {
   position: fixed;
-  top: 15px;
-  right: 20px;
+  top: 25px;
+  right: 40px;
   cursor: pointer;
   z-index: 1001;
 }
@@ -190,10 +190,26 @@ footer {
 .burger-menu div {
   width: 30px;
   height: 3px;
-  background-color: white;
+  background-color: #00ff88;
   margin: 6px 0;
   transition: 0.4s;
 }
+
+/* Burger animation */
+.burger-menu.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger-menu.active div:nth-child(2) {
+  opacity: 0;
+}
+.burger-menu.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.burger-menu div {
+  transition: all 0.3s ease;
+}
+
 
 /* Navigation Menu */
 .nav-menu {
@@ -202,7 +218,7 @@ footer {
   right: -250px;
   width: 200px;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 131, 159, 0.96);
   display: flex;
   flex-direction: column;
   justify-content: center;
