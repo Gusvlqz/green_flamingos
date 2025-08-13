@@ -13,9 +13,26 @@
     <meta property="og:url" content="https://yourdomain.com" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+
+<!-- Burger Menu -->
+<div class="burger-menu">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<!-- Navigation Menu -->
+<nav class="nav-menu">
+  <a href="#landing">Home</a>
+  <a href="#full-video-showcase">Reel</a>
+  <a href="#showcase">Work Showcase</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <!-- Landing Section -->
 <section id="landing">
@@ -24,11 +41,8 @@
       src="https://player.vimeo.com/video/1109203282?autoplay=1&loop=1&muted=1&background=1&byline=0&title=0&controls=0"
       frameborder="0"
       allow="autoplay; fullscreen"
-      allowfullscreen
       referrerpolicy="strict-origin-when-cross-origin"
       title="Green Flamingos"
-      width="100%"
-      height="100%"
     ></iframe>
   </div>
 
@@ -44,13 +58,10 @@
 <section id="full-video-showcase">
   <div class="video-container">
     <iframe 
-      src="https://player.vimeo.com/video/1084467229?background=1&autoplay=1&muted=1&loop=1&byline=0&title=0&controls=0" 
+      src="https://player.vimeo.com/video/1084467229?autoplay=1&muted=1&loop=0&byline=1&title=0&controls=1" 
       frameborder="0" 
       allow="autoplay; fullscreen; picture-in-picture" 
-      allowfullscreen
       title="Reel 2025"
-      width="100%"
-      height="100%"
     ></iframe>
   </div>
 </section>
@@ -58,9 +69,7 @@
 <!-- Showcase Section -->
 <section id="showcase">
     <h2>Work Showcase</h2>
-    <div class="poster-grid" id="posterGrid">
-        <!-- Posters will be loaded dynamically via JS -->
-    </div>
+    <div class="poster-grid" id="posterGrid"></div>
 </section>
 
 <!-- About Section -->
@@ -68,9 +77,7 @@
     <div class="about-content">
         <h2>About Me</h2>
         <p>
-            I am Green Flamingos, a VFX compositor dedicated to weaving visual magic into cinematic storytelling. 
-            From subtle enhancements to mind-bending transformations, my work blends technical precision 
-            with creative artistry, ensuring every frame resonates with the audience.
+            I am Green Flamingos, a VFX compositor dedicated to weaving visual magic into cinematic storytelling.
         </p>
     </div>
 </section>
@@ -96,6 +103,6 @@
     <p>© 2025 Green Flamingos. All rights reserved.</p>
 </footer>
 
-<script src="script.js?v=2"></script>
+<script src="script.js"></script>
 </body>
 </html>

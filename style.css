@@ -4,25 +4,26 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: #0a0f0a;
     color: #fff;
-    height: 100%;
+    height: 100%; /* Full height for background sections */
 }
 
 /* Landing Section */
 #landing {
     position: relative;
     width: 100%;
-    height: 100vh;   /* full viewport height */
+    height: 100vh; /* full viewport height */
     overflow: hidden;
 }
 
-.video-container {
+/* Landing Video Container */
+#landing .video-container {
     position: absolute;
-    inset: 0; /* top/right/bottom/left = 0 */
+    inset: 0;
     z-index: -1;
     overflow: hidden;
 }
 
-.video-container iframe {
+#landing .video-container iframe {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -32,12 +33,11 @@ body {
     width: auto;
     height: auto;
     border: 0;
-    /* pointer-events removed for better iframe visibility */
 }
 
-/* Fix for ultra-wide screens */
+/* Fix for ultra-wide screens in Landing */
 @media (min-aspect-ratio: 16/9) {
-    .video-container iframe {
+    #landing .video-container iframe {
         min-width: 100vw;
         min-height: calc(100vw * 9 / 16);
     }
@@ -67,32 +67,27 @@ body {
 
 /* Full Video Showcase Section */
 #full-video-showcase {
-  position: relative;
-  width: 100%;
-  height: 100vh;  /* Full viewport height */
-  overflow: hidden;
-  background: #000; /* Fallback background */
+    position: relative;
+    width: 100%;
+    background-color: black;
 }
 
+/* Full Video Showcase Container */
 #full-video-showcase .video-container {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* keeps 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
 }
 
 #full-video-showcase .video-container iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  border: 0;
-  /* pointer-events removed here too */
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* Showcase Section */
@@ -181,4 +176,48 @@ footer {
     padding: 20px;
     background-color: #050807;
     color: #888;
+}
+
+/* Burger Menu */
+.burger-menu {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger-menu div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 200px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.nav-menu a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.nav-menu.open {
+  right: 0;
 }

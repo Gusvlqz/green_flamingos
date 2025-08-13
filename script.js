@@ -7,27 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Posters array
     const posters = [
-        {
-            img: "assets/Dark_Winds.jpg",
-            link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
-        },
-        {
-            img: "assets/Little_Voice.jpg",
-            link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
-        },
-        {
-            img: "assets/Morko_Mali.jpg",
-            link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
-        },
-        {
-            img: "assets/P_Valley.jpg",
-            link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i"
-        }
+        { img: "assets/Dark_Winds.jpg", link: "https://www.imdb.com/title/tt15017118/" },
+        { img: "assets/Little_Voice.jpg", link: "https://www.imdb.com/title/tt15017118/" },
+        { img: "assets/Morko_Mali.jpg", link: "https://www.imdb.com/title/tt15017118/" },
+        { img: "assets/P_Valley.jpg", link: "https://www.imdb.com/title/tt15017118/" }
     ];
 
-    // Loop through posters and add to the grid
     posters.forEach(poster => {
         const a = document.createElement("a");
         a.href = poster.link;
@@ -45,8 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
         a.appendChild(img);
         posterGrid.appendChild(a);
     });
+
+    // Burger menu toggle
+    const burger = document.querySelector('.burger-menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    burger.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+    });
 });
-
-
-
-
