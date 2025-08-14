@@ -5,10 +5,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const posterGrid = document.getElementById("posterGrid");
     if (posterGrid) {
         const posters = [
+            { img: "assets/Westworld.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
             { img: "assets/Dark_Winds.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/The_Walking_Dead_Dead_City.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/The_Gilded_Age.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/The_Righteous_Gemstones.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/The_Plot_Against_America.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/Unbreakable_Kim_Schmidt.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/Power_Book_Ghost.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
             { img: "assets/Little_Voice.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
-            { img: "assets/Morko_Mali.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
-            { img: "assets/P_Valley.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" }
+            { img: "assets/Power_Book_Raising_Kanan 2021.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/P_Valley.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/Solteras.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/Pequenos_Heroes.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
+            { img: "assets/Morko_Mali.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" }
         ];
 
         posters.forEach(poster => {
@@ -29,6 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
             posterGrid.appendChild(a);
         });
     }
+    
+    // Trigger reflow so animation runs
+    requestAnimationFrame(() => {
+        img.style.opacity = "1";
+    });
+
+    
 
     // --- Burger Menu ---
     const burger = document.querySelector('.burger-menu');
@@ -47,3 +64,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+// Fade-in posters with staggered timing
+document.addEventListener("DOMContentLoaded", function () {
+    const posters = document.querySelectorAll(".poster-grid img");
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Stagger effect based on order in NodeList
+                posters.forEach((img, index) => {
+                    if (img === entry.target) {
+                        setTimeout(() => {
+                            img.classList.add("visible");
+                        }, index * 150); // 150ms delay between posters
+                    }
+                });
+
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    posters.forEach(img => observer.observe(img));
+});
+
