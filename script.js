@@ -66,27 +66,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Fade-in posters with staggered timing
+// Fade-in posters when they scroll into view
 document.addEventListener("DOMContentLoaded", function () {
-    const posters = document.querySelectorAll(".poster-grid img");
-
-    const observer = new IntersectionObserver((entries, obs) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Stagger effect based on order in NodeList
-                posters.forEach((img, index) => {
-                    if (img === entry.target) {
-                        setTimeout(() => {
-                            img.classList.add("visible");
-                        }, index * 150); // 150ms delay between posters
-                    }
-                });
-
-                obs.unobserve(entry.target);
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // stops watching after fade-in
             }
         });
     }, { threshold: 0.2 });
 
-    posters.forEach(img => observer.observe(img));
+    document.querySelectorAll(".poster-grid img").forEach(img => {
+        observer.observe(img);
+    });
 });
 
