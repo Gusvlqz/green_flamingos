@@ -92,7 +92,7 @@ body {
 
 /* Work Showcase Section */
 #showcase {
-  padding: 50px 20px;
+  padding: 50px 50px;
   background: #111;
   color: white;
   text-align: center;
@@ -102,7 +102,7 @@ body {
 /* Responsive Grid */
 .poster-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 20px;
   justify-items: center;
 }
@@ -125,7 +125,7 @@ body {
   display: block;
 }
 
-/* Fade-in effect */
+/* Fade-in effect Grid*/
 
 .poster-grid img {
   opacity: 0;
@@ -159,6 +159,11 @@ body {
 }
 
 /* Contact Section */
+#contact {
+    background: radial-gradient(circle 60rem at 50% 50%, #00b07eff 0%,  #00b07eff 5%, #00584af2 70%);
+    padding: 50px 20px;
+}
+
 #contact h2 {
     text-align: center;
     margin-bottom: 40px;
@@ -166,7 +171,7 @@ body {
 }
 
 #contact form {
-    max-width: 600px;
+    max-width: 450px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -198,17 +203,64 @@ body {
 }
 
 .contact-info {
-    text-align: center;
-    margin-top: 20px;
-    color: #ccc;
+    display: flex;
+    flex-direction: row; /* one row layout */
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 1.1rem;
+    background: transparent; /* fully transparent background */
+    box-shadow: none; /* remove frame effect */
 }
 
+.contact-info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: #ff839f;
+    font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* stack on smaller screens */
+        gap: 15px;
+        max-width: 90%;
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+
+
 /* Footer */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #050807;
-    color: #888;
+    padding: 0; /* minimal height */
+    background-color: #fffc30ff; /* bright yellow */
+    color: #000; /* black text */
+    font-size: 0.75rem;
+    line-height: 0;
+}
+
+
+#contact {
+    margin-bottom: 0; /* no gap before footer */
 }
 
 /* Burger Menu */
@@ -229,6 +281,7 @@ footer {
 }
 
 /* Burger active (X animation) */
+
 .burger-menu.active div:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
