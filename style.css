@@ -48,7 +48,7 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    top: 86%;
+    top: 90%;
     transform: translateY(-50%);
     color: #00ff88;
     font-family: 'Montserrat', sans-serif;
@@ -358,4 +358,5 @@ footer {
 .nav-menu.open {
   right: 0; /* slides in */
 }
+
 
