@@ -48,7 +48,7 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    top: 50%;
+    top: 86%;
     transform: translateY(-50%);
     color: #00ff88;
     font-family: 'Montserrat', sans-serif;
@@ -64,6 +64,37 @@ body {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
 }
+
+
+/* Text banner at the bottom of landing */
+
+.text-banner {
+  position: absolute;
+  bottom: 0;              /* sits at bottom of video */
+  left: 0;
+  width: 100%;
+  height: 32px;            /* thin like footer */
+  overflow: hidden;
+  background: 0; 
+  display: flex;
+  align-items: center;
+}
+
+.text-banner p {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: #00ff88;
+  padding-left: 100%;      /* start fully off screen */
+  animation: scroll-left 25s linear infinite;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+
 
 /* Full Video Showcase Section */
 #full-video-showcase {
@@ -189,7 +220,7 @@ body {
 
 #contact button {
     background-color: #00FF88;
-    color: black;
+    color: #666666;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -223,7 +254,7 @@ body {
 }
 
 .contact-info i {
-    color: #ff839f;
+    color: #00ff88;
     font-size: 1.2rem;
 }
 
@@ -252,7 +283,7 @@ html, body {
 footer {
     text-align: center;
     padding: 0; /* minimal height */
-    background-color: #fffc30ff; /* bright yellow */
+    background-color: #fffb00ff; /* bright yellow */
     color: #000; /* black text */
     font-size: 0.75rem;
     line-height: 0;
