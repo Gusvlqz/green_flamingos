@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const posterGrid = document.getElementById("posterGrid");
     if (posterGrid) {
         const posters = [
+            { img: "assets/KETU_TeCRÉ_Concho.jpg", link: "https://www.imdb.com/es/title/tt37110505/?ref_=mv_close" },
+            { img: "assets/Tropicoqueta.jpg", link: "https://www.tropicoqueta.com/" },
+            { img: "assets/Spotify_Concho.jpg", link: "https://www.instagram.com/reel/DRzhLwljlE-/?hl=es" },
             { img: "assets/Westworld.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
             { img: "assets/Dark_Winds.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
             { img: "assets/The_Walking_Dead_Dead_City.jpg", link: "https://www.imdb.com/title/tt15017118/?ref_=ttep_ov_i" },
