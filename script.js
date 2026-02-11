@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const posterGrid = document.getElementById("posterGrid");
     if (posterGrid) {
         const posters = [
+            { img: "assets/Lodo.jpg", link: "https://www.imdb.com/title/tt39112642/?ref_=mv_close" },
             { img: "assets/KETU_TeCRÉ_Concho.jpg", link: "https://www.imdb.com/es/title/tt37110505/?ref_=mv_close" },
             { img: "assets/Tropicoqueta.jpg", link: "https://www.tropicoqueta.com/" },
             { img: "assets/Spotify_Concho.jpg", link: "https://www.instagram.com/reel/DRzhLwljlE-/?hl=es" },
@@ -92,4 +93,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     posters.forEach(img => observer.observe(img));
 });
+
 
